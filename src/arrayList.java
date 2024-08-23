@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class arrayList {
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>(5);
+        ArrayList<Integer> list = new ArrayList<>();
         ArrayList<Integer> list2 = new ArrayList<>(5);
         Scanner in = new Scanner(System.in);
         list.add(4);
@@ -13,13 +13,13 @@ public class arrayList {
 //            list.add(in.nextInt());
 //        }
 
-        while(true){
-            int input= in.nextInt();
-            if(input == -1){
-                break;
-            }
-            list.add(input);
-        }
+//        while(true){
+//            int input= in.nextInt();
+//            if(input == -1){
+//                break;
+//            }
+//            list.add(input);
+//        }
 
 
 
