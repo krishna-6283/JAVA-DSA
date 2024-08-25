@@ -13,9 +13,9 @@ public class minimumHeight {
         }
         Arrays.sort(arr);
         int res=arr[n-1] - arr[0];
-        for(int i =1;i<=n-1;i++){
-            int maxele=Math.max(arr[n-1]-k,arr[i-1]+k);
-            int minele=Math.min(arr[0]+k,arr[i]-k);
+        for(int i =1;i<n-1;i++){
+            int maxele=Math.max(arr[n-1]-k,arr[i]+k);
+            int minele=Math.min(arr[0]+k,arr[i+1]-k);
             res=Math.min(res,maxele-minele);
         }
         System.out.println(res);
