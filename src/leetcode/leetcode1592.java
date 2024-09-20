@@ -30,11 +30,12 @@ public class leetcode1592 {
         }
         System.out.println(spaces);
         System.out.println(ans.size());
+        int esp=0;
         if(ans.size()==1){
-            int esp=spaces;
+            esp=spaces;
         }
         else{
-            int esp=spaces/(ans.size()-1);
+            esp=spaces/(ans.size()-1);
 
         }
         int cnt=esp;
