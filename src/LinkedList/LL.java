@@ -41,19 +41,81 @@ public class LL {
         size++;
     }
     public void insertMiddle(int idx,int val){
-        if(idx==0) insertFirst(val);
-        if(idx==size) insertLast(val);
+        if(idx>size){
+            System.out.println("invalid");
+            return;
+        }
+        if(idx==0) {
+            insertFirst(val);
+            return;
+        }
+        if(idx==size) {
+            insertLast(val);
+            return;
+        }
         Node temp=head;
 
         while(idx>1){
             idx--;
             temp=temp.next;
         }
-        Node node = new Node(val);
-        Node sec=temp.next;
+        Node node = new Node(val,temp.next);
+//        Node sec=temp.next;
         temp.next=node;
 
-        node.next=sec;
+//        node.next=sec;
+        size++;
+    }
+
+    public void deleteFirst(){
+        if(head==null) return;
+        head=head.next;
+        if(head==null){
+            tail=null;
+        }
+        size--;
+    }
+
+    public void deleteLast(){
+        if(head==null){
+            return;
+        }
+        if(head==tail){
+            head=null;
+            tail=null;
+            return;
+        }
+        int num=size-1;
+        Node temp=head;
+        while(num>1){
+            num--;
+            temp=temp.next;
+        }
+        temp.next=null;
+//        System.out.println(temp.next);
+        tail=temp;
+        size--;
+    }
+    public void deleteAtPos(int idx){
+        if(idx>=size){
+            System.out.println("invalid");
+            return;
+        }
+        Node temp=head;
+        if(idx==0) {
+            deleteFirst();
+            return;
+        }
+        if(idx==size-1){
+            deleteLast();
+            return;
+        }
+        while (idx>1){
+            idx--;
+            temp=temp.next;
+        }
+        temp.next=temp.next.next;
+        size--;
     }
     public void display(){
         Node temp=head;
