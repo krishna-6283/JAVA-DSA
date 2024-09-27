@@ -67,6 +67,7 @@ public class LL {
         size++;
     }
 
+
     public void deleteFirst(){
         if(head==null) return;
         head=head.next;
