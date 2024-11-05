@@ -2,10 +2,9 @@ package recursion;
 
 public class palindrome {
     public static void main(String[] args) {
-        int num=2521;
-        int temp=num;
+        int num=2552;
         int prod=0;
-        System.out.println(pal(num,temp,prod));
+        System.out.println(pal(num, num,prod));
     }
     static boolean pal(int num,int temp,int prod){
         if(num==0){
